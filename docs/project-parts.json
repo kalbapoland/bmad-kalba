@@ -1,0 +1,39 @@
+{
+  "repository_type": "multi-part",
+  "generated": "2026-06-27",
+  "generator": "bmad-document-project (deep scan)",
+  "parts": [
+    {
+      "part_id": "backend",
+      "display_name": "Kalba Backend API",
+      "root_path": "backend-kalba",
+      "project_type_id": "backend",
+      "repo": "kalbapoland/backend-kalba",
+      "primary_language": "Python 3.13",
+      "framework": "FastAPI",
+      "datastore": "PostgreSQL (asyncpg, SQLModel)",
+      "entry_point": "app.main:app",
+      "deploy": "Fly.io (backend-kalba, region ams)"
+    },
+    {
+      "part_id": "frontend",
+      "display_name": "Kalba Mobile App",
+      "root_path": "frontend-kalba",
+      "project_type_id": "mobile",
+      "repo": "kalbapoland/frontend-kalba",
+      "primary_language": "TypeScript",
+      "framework": "React Native / Expo SDK 54 (Expo Router)",
+      "entry_point": "expo-router/entry -> app/_layout.tsx",
+      "deploy": "EAS (App Store / internal)"
+    }
+  ],
+  "integration_points": [
+    {"from": "frontend", "to": "backend", "type": "REST /api/v1 over HTTPS", "details": "Axios + Bearer JWT, 401 auto-refresh"},
+    {"from": "frontend", "to": "Daily.co", "type": "WebRTC", "details": "joins with backend-issued meeting token only"},
+    {"from": "frontend", "to": "Google", "type": "OAuth", "details": "native Sign-In id_token -> POST /auth/google"},
+    {"from": "backend", "to": "Daily.co", "type": "REST + webhook", "details": "private rooms, tokens, app-messages, participant.left settlement"},
+    {"from": "backend", "to": "Expo Push", "type": "REST", "details": "workshop reminders"},
+    {"from": "backend", "to": "Brevo", "type": "REST", "details": "password-reset email"},
+    {"from": "backend", "to": "PostgreSQL", "type": "asyncpg", "details": "primary datastore"}
+  ]
+}

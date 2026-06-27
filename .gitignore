@@ -1,0 +1,10 @@
+# This is the Kalba *planning* repo (BMAD artifacts + docs only).
+
+# --- Local tooling / build noise ---
+node_modules/
+.venv/
+.DS_Store
+*.log
+
+# --- Local-only Claude settings (keep shared config tracked) ---
+.claude/settings.local.json

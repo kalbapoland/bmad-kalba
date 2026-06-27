@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@config-plugins/react-native-webrtc": "^13.0.0"
+  }
+}

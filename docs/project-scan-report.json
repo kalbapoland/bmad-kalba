@@ -1,0 +1,49 @@
+{
+  "workflow_version": "1.2.0",
+  "generator": "bmad-document-project",
+  "timestamps": {
+    "started": "2026-06-27T00:00:00Z",
+    "last_updated": "2026-06-27T00:00:00Z",
+    "completed": "2026-06-27T00:00:00Z"
+  },
+  "mode": "initial_scan",
+  "scan_level": "deep",
+  "project_root": "/Users/bartlomiejpalus/Documents/Projects/kalba",
+  "project_knowledge": "docs",
+  "repository_type": "multi-part",
+  "project_classification": "Multi-part product: FastAPI backend (backend) + Expo/React Native app (mobile), two independent git repos under an umbrella planning repo.",
+  "project_types": [
+    {"part_id": "backend", "project_type_id": "backend", "display_name": "Kalba Backend API"},
+    {"part_id": "frontend", "project_type_id": "mobile", "display_name": "Kalba Mobile App"}
+  ],
+  "current_step": "completed",
+  "completed_steps": [
+    {"step": "step_1", "status": "completed", "summary": "Classified as multi-part with 2 parts (FastAPI backend, Expo/RN frontend)"},
+    {"step": "step_2", "status": "completed", "summary": "Found existing docs: backend AUDIT_REPORT; frontend DESIGN, FEATURES-LIST, APP_STORE_LAUNCH, EAS, runbooks, checklists"},
+    {"step": "step_3", "status": "completed", "summary": "Tech stacks: FastAPI/SQLModel/PostgreSQL; React 19/Expo SDK 54/Expo Router"},
+    {"step": "step_4", "status": "completed", "summary": "API contracts (8 routers, ~45 endpoints) + 16 DB tables documented"},
+    {"step": "step_5", "status": "completed", "summary": "Annotated source tree written"},
+    {"step": "step_6", "status": "completed", "summary": "Dev + deployment guides written (Fly.io, EAS)"},
+    {"step": "step_7", "status": "completed", "summary": "Integration architecture documented (REST, Daily.co, Google, Expo, Brevo)"},
+    {"step": "step_8", "status": "completed", "summary": "Architecture docs written for backend and frontend"},
+    {"step": "step_9", "status": "completed", "summary": "Supporting docs: component inventory, data models, project-parts.json"},
+    {"step": "step_10", "status": "completed", "summary": "Master index.md generated"},
+    {"step": "step_11", "status": "completed", "summary": "Validation: no incomplete markers; all expected files present"},
+    {"step": "step_12", "status": "completed", "summary": "Workflow complete"}
+  ],
+  "outputs_generated": [
+    "project-scan-report.json",
+    "index.md",
+    "project-overview.md",
+    "architecture-backend.md",
+    "api-contracts-backend.md",
+    "data-models-backend.md",
+    "architecture-frontend.md",
+    "component-inventory-frontend.md",
+    "integration-architecture.md",
+    "source-tree-analysis.md",
+    "development-guide.md",
+    "deployment-guide.md",
+    "project-parts.json"
+  ]
+}
