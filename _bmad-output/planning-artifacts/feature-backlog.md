@@ -80,7 +80,7 @@ and/or preset positions.
 - **Type:** Bug
 - **Area:** Video (camera orientation)
 - **Priority:** High
-- **Status:** new
+- **Status:** implemented, pending on-device verification (branch `bard/fix-call-orientation`; investigated + spec'd via quick-dev — see `../implementation-artifacts/spec-bl-004-call-orientation.md`)
 
 **Report:** During a call, when rotating the phone from portrait to landscape,
 the camera image rotates for a second to match the landscape orientation, then
