@@ -38,7 +38,7 @@ truth for locale, and (c) optionally adding a user-facing language switcher.
 - **Type:** Feature
 - **Area:** Video / Backend (host controls)
 - **Priority:** TBD
-- **Status:** new
+- **Status:** refined (in-call kick) — story `../implementation-artifacts/story-bl-002-host-kick-participant.md` (ready-for-dev). Only the **live-call** removal is scoped there; "remove from the group" (persistent) is split out as a separate follow-up story.
 
 **Request:** The person leading a session (trainer/host) should be able to
 remove participants — both from the live class and from the group.
@@ -46,10 +46,13 @@ remove participants — both from the live class and from the group.
 > **PL (original):** "Wykikowanie — Jak w tytule. Dobrze, gdyby osoba prowadzaca
 > miala mozliwosc usuniecia uczestnikow z zajec i z grupy."
 
-**Notes:** Relates to the existing host-action stub
-(`POST /video/workshops/{id}/host-action`, with a `remove` action) and Daily.co
-participant ejection. "From the group" implies a persistent removal beyond the
-single call.
+**Notes:** Builds on the existing host-action endpoint
+(`POST /video/workshops/{id}/host-action`). NOTE: the `HostActionType` enum has
+no `remove` action yet (only mute/camera); the story adds `remove_participant`
+and reuses the already-present `HostAction.target_user_id` field. Ejection is a
+client-side Daily owner action (`updateParticipant(sid, {eject:true})`), not a
+backend REST call. "From the group" implies a persistent removal beyond the
+single call (out of scope for this story).
 
 ---
 
